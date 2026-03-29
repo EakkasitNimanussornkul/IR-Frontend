@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
+import DashboardView from '../views/DashboardView.vue'
 import LoginView from '../views/LoginView.vue'
 import RegisterView from '../views/RegisterView.vue'
 
@@ -12,6 +13,7 @@ const router = createRouter({
     { path: '/', redirect: '/dashboard' },
     { path: '/login', component: LoginView, meta: { guest: true } },
     { path: '/register', component: RegisterView, meta: { guest: true } },
+    { path: '/dashboard', component: DashboardView, meta: { requiresAuth: true } },
   ],
 })
 
