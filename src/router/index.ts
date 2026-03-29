@@ -2,7 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
 import BookmarksView from '../views/BookmarksView.vue'
 import DashboardView from '../views/DashboardView.vue'
+import FolderView from '../views/FolderView.vue'
 import LoginView from '../views/LoginView.vue'
+import RecipeDetailView from '../views/RecipeDetailView.vue'
 import RegisterView from '../views/RegisterView.vue'
 import SearchView from '../views/SearchView.vue'
 
@@ -17,7 +19,9 @@ const router = createRouter({
     { path: '/register', component: RegisterView, meta: { guest: true } },
     { path: '/dashboard', component: DashboardView, meta: { requiresAuth: true } },
     { path: '/search', component: SearchView, meta: { requiresAuth: true } },
+    { path: '/recipe/:id', component: RecipeDetailView, meta: { requiresAuth: true } },
     { path: '/bookmarks', component: BookmarksView, meta: { requiresAuth: true } },
+    { path: '/folders/:id', component: FolderView, meta: { requiresAuth: true } },
   ],
 })
 
